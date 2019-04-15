@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
     <v-app>
+      <AppBar></AppBar>
       <InputTask v-on:child-event="TaskAdded"/>
       <taskView v-bind:tasks='tasks' v-on:child-event="TaskFinished"/>
     </v-app>
@@ -11,12 +11,14 @@
 <script>
 import TaskView from './components/TaskView'
 import InputTask from './components/InputTask'
+import AppBar from './components/AppBar'
 
 export default {
   name: 'App',
   components: {
     TaskView,
-    InputTask
+    InputTask,
+    AppBar
   },
   data () {
     return {

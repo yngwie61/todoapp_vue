@@ -25,24 +25,10 @@ export default {
           sortable: false,
           value: 'name'
         },
-        { 
-          text: 'Status', 
+        {
+          text: 'Status',
           sortable: false,
-          value: 'status' 
-        }
-      ],
-      desserts: [
-        {
-          name: 'Honeycomb',
-          iron: '45%'
-        },
-        {
-          name: 'Donut',
-          iron: '22%'
-        },
-        {
-          name: 'KitKat',
-          iron: '6%'
+          value: 'status'
         }
       ]
     }
