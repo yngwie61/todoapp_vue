@@ -3,8 +3,8 @@
     <v-data-table :headers="headers" :items='tasks' class="elevation-1">
       <template v-slot:items="props">
         <td>{{ props.item.name }}</td>
-        <td v-if=props.item.flag class="text-xs-right"><v-btn v-on:click='click(props.item.name)' color='info'> Done </v-btn></td>
-        <td v-else class="text-xs-right"><v-btn v-on:click='click(props.item.name)' color='warning'>Not Yet</v-btn></td>
+        <td v-if=props.item.flag class="text-xs-left"><v-btn v-on:click='click(props.item.name)' color='info'> Done </v-btn></td>
+        <td v-else class="text-xs-left"><v-btn v-on:click='click(props.item.name)' color='warning'>Not Yet</v-btn></td>
       </template>
     </v-data-table>
   </div>
