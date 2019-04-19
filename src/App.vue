@@ -19,11 +19,6 @@ export default {
     TaskView,
     InputTask,
     AppBar
-  },
-  computed: {
-    tasks () {
-      return this.$store.state.tasks
-    }
   }
 }
 </script>
