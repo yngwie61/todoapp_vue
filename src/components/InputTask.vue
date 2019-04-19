@@ -12,13 +12,8 @@
 </template>
 
 <script>
-import Vuetify from 'vuetify'
-
 export default {
   name: 'InputTask',
-  components: {
-    Vuetify
-  },
   data () {
     return {
       taskname: ''
@@ -26,7 +21,7 @@ export default {
   },
   methods: {
     addtask: function (msg) {
-      this.$emit('child-event', msg)
+      this.$store.dispatch('TaskAdded', msg)
       this.taskname = ''
     }
   }

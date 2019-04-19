@@ -2,8 +2,8 @@
   <div id="app">
     <v-app>
       <AppBar></AppBar>
-      <InputTask v-on:child-event="TaskAdded"/>
-      <taskView v-bind:tasks='tasks' v-on:child-event="TaskFinished"/>
+      <InputTask />
+      <taskView />
     </v-app>
   </div>
 </template>
@@ -20,42 +20,9 @@ export default {
     InputTask,
     AppBar
   },
-  data () {
-    return {
-      tasks: [
-        {
-          name: 'No1',
-          flag: false
-        },
-        {
-          name: 'No2',
-          flag: true
-        },
-        {
-          name: 'No3',
-          flag: false
-        }
-      ]
-    }
-  },
-  methods: {
-    TaskFinished: function (msg) {
-      this.tasks.forEach(value => {
-        if (value.name === msg) {
-          if (value.flag === true) {
-            value.flag = false
-          } else if (value.flag === false) {
-            value.flag = true
-          }
-        }
-      })
-    },
-    TaskAdded: function (msg) {
-      console.log(msg)
-      this.tasks.push({
-        name: msg,
-        flag: false
-      })
+  computed: {
+    tasks () {
+      return this.$store.state.tasks
     }
   }
 }
